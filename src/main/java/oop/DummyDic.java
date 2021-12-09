@@ -2,9 +2,9 @@ package oop;
 
 public class DummyDic {
 
-    public String enToRus(){
-        String word = "Hello";
-        return word;
+    public String enToRus() {
+        String i = "Hello";
+        return i;
     }
 
     public static void main(String[] args) {
