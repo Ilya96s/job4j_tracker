@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class PointTest {
 
     @Test
-    public void when000to400then4() {
+    public void when000to869then13point45() {
         Point a = new Point(0, 0, 0);
         Point b = new Point(8, 6, 9);
         double dist = a.distance3d(b);
