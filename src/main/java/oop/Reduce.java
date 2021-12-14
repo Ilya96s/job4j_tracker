@@ -13,7 +13,7 @@ public class Reduce {
         }
     }
 
-        public static void main (String[]args){
+        public static void main(String[]args) {
             int[] array = {1, 2, 3};
             Reduce reduce = new Reduce();
             reduce.to(array);
