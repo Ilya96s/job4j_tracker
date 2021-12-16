@@ -4,7 +4,7 @@ public class Programmer extends  Engineer {
     private boolean english;
 
     public Programmer(String name, String surname, String education, String birthday, String categoty, boolean english) {
-        super(name, surname,education,birthday,categoty);
+        super(name, surname, education, birthday, categoty);
        this.english = english;
     }
 
