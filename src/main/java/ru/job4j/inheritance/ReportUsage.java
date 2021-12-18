@@ -6,3 +6,4 @@ public class ReportUsage {
         System.out.println(jsonreport.generate("name", "body"));
     }
 }
+
