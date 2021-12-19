@@ -7,7 +7,7 @@ public class College {
         student.setGroup("ЭМм-51");
         student.setStartDate("2012.09.01");
         System.out.println("Студент: " + student.getFullName() + System.lineSeparator()
-                + "Группа: " + student.getGroup() +System.lineSeparator()
+                + "Группа: " + student.getGroup() + System.lineSeparator()
                 + "Дата поступления: " + student.getStartDate());
     }
 }
