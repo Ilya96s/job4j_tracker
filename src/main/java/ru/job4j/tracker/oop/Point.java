@@ -1,4 +1,4 @@
-package oop;
+package ru.job4j.tracker.oop;
 
 import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;

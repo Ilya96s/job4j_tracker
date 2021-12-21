@@ -1,9 +1,8 @@
-package oop;
+package ru.job4j.tracker.oop;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
+import ru.job4j.tracker.oop.Max;
 
 public class MaxTest {
 

@@ -1,4 +1,4 @@
-package oop;
+package ru.job4j.tracker.oop;
 
 public class Max {
         public static int max(int left, int right) {

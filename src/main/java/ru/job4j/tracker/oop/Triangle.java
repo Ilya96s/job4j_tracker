@@ -1,4 +1,4 @@
-package oop;
+package ru.job4j.tracker.oop;
 
 public class Triangle {
     private Point first;
@@ -12,8 +12,7 @@ public class Triangle {
     }
 
     public double semiPerimetr(double a, double b, double c) {
-        double rsl = (a + b + c) / 2;
-        return rsl;
+        return (a + b + c) / 2;
     }
 
     public boolean exist(double ab, double ac, double bc) {

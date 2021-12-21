@@ -1,10 +1,12 @@
-package oop;
+package ru.job4j.tracker.oop;
 
 import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 import org.junit.Test;
+import ru.job4j.tracker.oop.Point;
+import ru.job4j.tracker.oop.Triangle;
 
 public class TriangleTest {
 
