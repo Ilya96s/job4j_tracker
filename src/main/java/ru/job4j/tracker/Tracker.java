@@ -23,11 +23,7 @@ public class Tracker {
                 count++;
             }
         }
-        rsl = Arrays.copyOf(rsl, count);
-        for (int i = 0; i < rsl.length; i++) {
-            System.out.println(rsl[i]);
-        }
-        return rsl;
+        return Arrays.copyOf(items, size);
     }
 
     public Item[] findByName(String key) {
@@ -40,11 +36,7 @@ public class Tracker {
                 count++;
             }
         }
-        rsl = Arrays.copyOf(rsl, count);
-        for (int i = 0; i < rsl.length; i++) {
-            System.out.println(rsl[i]);
-        }
-        return rsl;
+        return Arrays.copyOf(rsl, count);
     }
 
     public Item findById(int id) {
