@@ -13,4 +13,3 @@ public class StartUI {
         System.out.println("Текущие дата и время: " + currentDateTimeFormat);
     }
 }
-
