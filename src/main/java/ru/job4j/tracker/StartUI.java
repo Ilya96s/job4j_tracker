@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class StartUI {
@@ -53,6 +54,7 @@ public class StartUI {
                 int id = Integer.parseInt(scanner.nextLine());
                 Item item = tracker.findById(id);
                 if (item != null) {
+                    System.out.println(item);
                 } else {
                     System.out.println("Заявка с введенным id: " + id + " не найдена");
                 }
