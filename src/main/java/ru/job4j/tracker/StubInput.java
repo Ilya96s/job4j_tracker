@@ -11,11 +11,11 @@ public class StubInput implements Input {
 
     @Override
     public String askStr(String question) {
-        return null;
+        return answers[position++];
     }
 
     @Override
     public int askInt(String question) {
-        return 0;
+        return Integer.parseInt(askStr(question));
     }
 }
