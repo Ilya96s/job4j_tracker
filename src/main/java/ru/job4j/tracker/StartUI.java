@@ -2,7 +2,6 @@ package ru.job4j.tracker;
 
 import java.sql.SQLOutput;
 
-
 public class StartUI {
     public void init(Input input, Tracker tracker) {
         boolean run = true;
