@@ -6,7 +6,7 @@ public class Bus implements Transport {
 
     @Override
     public void drive() {
-
+        System.out.println("Автобус № 10");
     }
 
     @Override
