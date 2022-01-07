@@ -52,7 +52,7 @@ public class StartUITest {
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
                         + "=== Show all items ===" + ln
-                        + one.toString() + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Show all items" + ln
                         + "1. Exit" + ln
@@ -79,7 +79,7 @@ public class StartUITest {
                         + "0. Find item by name" + ln
                         + "1. Exit" + ln
                         + "=== Find items by name ===" + ln
-                        + one.toString() + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Find item by name" + ln
                         + "1. Exit" + ln
@@ -105,7 +105,7 @@ public class StartUITest {
                         + "0. Find items by id" + ln
                         + "1. Exit" + ln
                         + "=== Find item by id ===" + ln
-                        + one.toString() + ln
+                        + one + ln
                         + "Menu:" + ln
                         + "0. Find items by id" + ln
                         + "1. Exit" + ln
