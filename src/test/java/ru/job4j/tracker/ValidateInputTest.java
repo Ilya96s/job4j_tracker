@@ -43,15 +43,4 @@ public class ValidateInputTest {
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(1));
     }
-
-    @Test
-    public void whenFalseInput() {
-        Output out = new StubOutput();
-        Input in = new StubInput(
-                new String[] {"-3"}
-        );
-        ValidateInput input = new ValidateInput(out, in);
-        int selected = input.askInt("Enter menu:");
-        assertThat(selected, is(-3));
-    }
 }
