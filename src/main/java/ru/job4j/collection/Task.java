@@ -6,7 +6,7 @@ public class Task {
 
     public Task(String number, String description) {
         this.number = number;
-        this. description = description;
+        this.description = description;
     }
 
     public String getNumber() {
