@@ -31,7 +31,6 @@ public class ItemTest {
         assertThat(items, is(expected));
     }
 
-
     @Test
     public void descName() {
         List<Item> items = Arrays.asList(
