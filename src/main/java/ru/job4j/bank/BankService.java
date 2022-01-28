@@ -12,6 +12,10 @@ public class BankService {
             users.putIfAbsent(user, new ArrayList<>());
     }
 
+    public void deleteUser(User user) {
+        users.remove(user);
+    }
+
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
         if (user != null && !users.get(user).contains(account)) {
@@ -44,7 +48,7 @@ public class BankService {
                                  String destPassport, String destRequisite, double amount) {
         Account srcAccount = findByRequisite(srcPassport, srcRequisite);
         Account destAccount = findByRequisite(destPassport, destRequisite);
-        boolean rsl = true;
+        boolean rsl = false;
         if ((srcAccount != null) && (destAccount != null) && (srcAccount.getBalance() >= amount)) {
             srcAccount.setBalance(srcAccount.getBalance() - amount);
             destAccount.setBalance(destAccount.getBalance() + amount);
