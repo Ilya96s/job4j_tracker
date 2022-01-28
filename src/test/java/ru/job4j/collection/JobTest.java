@@ -56,6 +56,7 @@ public class JobTest {
         );
         assertThat(jobs, is(expected));
     }
+
     @Test
     public void descendingPriority() {
         List<Job> jobs = Arrays.asList(
