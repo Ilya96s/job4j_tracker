@@ -6,7 +6,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class StrategyUsage {
-    public boolean check(Predicate<String> pred , String s) {
+    public boolean check(Predicate<String> pred, String s) {
         return pred.test(s);
     }
 
