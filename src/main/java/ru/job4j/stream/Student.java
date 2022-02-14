@@ -15,7 +15,7 @@ public class Student {
 
     public Student(String surname, int score) {
         this.surname = surname;
-        this.score =score;
+        this.score = score;
     }
 
     public int getScore() {
