@@ -3,7 +3,9 @@ package ru.job4j.stream;
 import java.util.Objects;
 
 public class Student {
+
     private int score;
+
     private String surname;
 
     public Student(int score, String surname) {
@@ -13,13 +15,12 @@ public class Student {
 
     public Student(String surname, int score) {
         this.surname = surname;
-        this.score = score;
+        this.score =score;
     }
 
     public int getScore() {
         return score;
     }
-
     public String getSurname() {
         return surname;
     }
@@ -40,7 +41,6 @@ public class Student {
         return score == student.score
                 && Objects.equals(surname, student.surname);
     }
-
     @Override
     public int hashCode() {
         return Objects.hash(score, surname);

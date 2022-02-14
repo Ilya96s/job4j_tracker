@@ -2,7 +2,6 @@ package ru.job4j.stream;
 
 import org.junit.Test;
 
-import javax.swing.undo.StateEdit;
 import java.util.ArrayList;
 import java.util.List;
 
