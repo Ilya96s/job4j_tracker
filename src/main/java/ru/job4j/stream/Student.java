@@ -21,6 +21,7 @@ public class Student {
     public int getScore() {
         return score;
     }
+
     public String getSurname() {
         return surname;
     }
@@ -41,6 +42,7 @@ public class Student {
         return score == student.score
                 && Objects.equals(surname, student.surname);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(score, surname);
