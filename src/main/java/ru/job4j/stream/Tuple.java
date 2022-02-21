@@ -28,8 +28,8 @@ public class Tuple {
             return false;
         }
         Tuple tuple = (Tuple) o;
-        return Double.compare(tuple.score, score) == 0 &&
-                Objects.equals(name, tuple.name);
+        return Double.compare(tuple.score, score) == 0
+                && Objects.equals(name, tuple.name);
     }
 
     @Override
