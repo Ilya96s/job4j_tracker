@@ -1,6 +1,5 @@
 package ru.job4j.tracker;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.List;
@@ -12,7 +11,7 @@ public class StartUITest {
     @Test
     public void whenReplaceItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         String replaceName = "New Test Name";
         Input in = new StubInput(
@@ -39,7 +38,7 @@ public class StartUITest {
     @Test
     public void whenFindAllItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
                 new String[]{"0", "1"}
@@ -66,7 +65,7 @@ public class StartUITest {
     @Test
     public void whenFindByNameItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
                 new String[]{"0", "test1", "1"}
@@ -92,7 +91,7 @@ public class StartUITest {
     @Test
     public void whenFindByIdItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         Item one = tracker.add(new Item("test1"));
         Input in = new StubInput(
                 new String[]{"0", String.valueOf(one.getId()), "1"}
@@ -121,7 +120,7 @@ public class StartUITest {
         Input in = new StubInput(
                 new String[]{"7", "0"}
         );
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         List<UserAction> actions = List.of(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
