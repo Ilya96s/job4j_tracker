@@ -34,7 +34,7 @@ public class SqlTracker implements Store, AutoCloseable {
 
     @Override
     public Item add(Item item) {
-        String sql = "insert into items(name) values(?)";
+        String sql = "insert into items(name, created) values(?, ?)";
         try (PreparedStatement statement = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(2, item.getName());
             statement.setTimestamp(3, Timestamp.valueOf(item.getCreated()));
