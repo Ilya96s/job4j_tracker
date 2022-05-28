@@ -34,9 +34,10 @@ public class Item {
         this.name = name;
     }
 
-    public Item(String name, int id) {
+    public Item(String name, int id, LocalDateTime created) {
         this.name = name;
         this.id = id;
+        this.created = created;
     }
 
     public void setName(String name) {
