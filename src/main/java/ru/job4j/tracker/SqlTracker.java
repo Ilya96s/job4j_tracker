@@ -36,8 +36,8 @@ public class SqlTracker implements Store, AutoCloseable {
     public Item add(Item item) {
         String sql = "insert into items(name, created) values(?, ?)";
         try (PreparedStatement statement = cn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
-            statement.setString(2, item.getName());
-            statement.setTimestamp(3, Timestamp.valueOf(item.getCreated()));
+            statement.setString(1, item.getName());
+            statement.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
             statement.execute();
             ResultSet generatedKeys  = statement.getGeneratedKeys();
             if (generatedKeys.next()) {
@@ -52,11 +52,11 @@ public class SqlTracker implements Store, AutoCloseable {
     @Override
     public boolean replace(int id, Item item) {
         boolean result = false;
-        String sql = "update items set name = ? where id = ?";
+        String sql = "update items set name = ?, created = ? where id = ?";
         try (PreparedStatement statement = cn.prepareStatement(sql)) {
-            statement.setInt(1, id);
-            statement.setString(2, item.getName());
-            statement.setTimestamp(3, Timestamp.valueOf(item.getCreated()));
+            statement.setInt(3, id);
+            statement.setString(1, item.getName());
+            statement.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
             result = statement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -98,9 +98,11 @@ public class SqlTracker implements Store, AutoCloseable {
         String sql = "select * from items where name = ?";
         List<Item> itemList = new ArrayList<>();
         try (PreparedStatement statement = cn.prepareStatement(sql)) {
-            statement.setString(2, key);
+            statement.setString(1, key);
             ResultSet resultSet = statement.executeQuery();
-            itemList.add(createItem(resultSet));
+            while (resultSet.next()) {
+                itemList.add(createItem(resultSet));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -114,7 +116,9 @@ public class SqlTracker implements Store, AutoCloseable {
         try (PreparedStatement statement = cn.prepareStatement(sql)) {
             statement.setInt(1, id);
             ResultSet resultSet = statement.executeQuery();
-            item = createItem(resultSet);
+            if (resultSet.next()) {
+                item = createItem(resultSet);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
