@@ -70,7 +70,6 @@ public class SqlTracker implements Store, AutoCloseable {
         String sql = "delete from items where id = ?";
         try (PreparedStatement statement = cn.prepareStatement(sql)) {
             statement.setInt(1, id);
-            statement.execute();
             result = statement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
