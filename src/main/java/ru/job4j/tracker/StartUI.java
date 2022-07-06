@@ -44,7 +44,9 @@ public class StartUI {
                     new ShowAction(output),
                     new FindByIdAction(output),
                     new FindByNameAction(output),
-                    new ExitAction(output)
+                    new ExitAction(output),
+                    new DeleteManyItems(output),
+                    new CreateManyItems(output)
             );
             new StartUI(output).init(input, tracker, actions);
         } catch (Exception e) {
