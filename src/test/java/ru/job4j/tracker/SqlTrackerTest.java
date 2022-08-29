@@ -18,7 +18,6 @@ public class SqlTrackerTest {
     private static Connection connection;
 
     @BeforeClass
-    @Ignore
     public static void initConnection() {
         try (InputStream in = SqlTrackerTest.class.getClassLoader().getResourceAsStream("test.properties")) {
             Properties config = new Properties();
@@ -36,13 +35,11 @@ public class SqlTrackerTest {
     }
 
     @AfterClass
-    @Ignore
     public static void closeConnection() throws SQLException {
         connection.close();
     }
 
     @After
-    @Ignore
     public void wipeTable() throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement("delete from items")) {
             statement.execute();
@@ -50,7 +47,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenSaveItemAndFindByGeneratedIdThenMustBeTheSame() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item1"));
@@ -58,7 +54,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenAddItemThenDeleteItem() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item1"));
@@ -67,7 +62,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenAddItemsThenFindByName() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item1 = tracker.add(new Item("item1"));
@@ -79,7 +73,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenAddItemsThenFindById() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = tracker.add(new Item("item"));
@@ -88,7 +81,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenAddItemsThenFindAll() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item1 = tracker.add(new Item("item1"));
@@ -99,7 +91,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenAddItemsThenReplace() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item1 = new Item("item3333");
@@ -110,7 +101,6 @@ public class SqlTrackerTest {
     }
 
     @Test
-    @Ignore
     public void whenAddItem() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item1 = new Item("item1");
