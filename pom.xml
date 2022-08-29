@@ -28,7 +28,7 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.3.5</version>
+            <version>42.5.0</version>
         </dependency>
     </dependencies>
     <build>
@@ -86,6 +86,14 @@
                 <version>3.2.0</version>
                 <configuration>
                     <javadocExecutable>${java.home}/bin/javadoc</javadocExecutable>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>4.15.0</version>
+                <configuration>
+                    <propertyFile>db/liquibase.properties</propertyFile>
                 </configuration>
             </plugin>
         </plugins>
