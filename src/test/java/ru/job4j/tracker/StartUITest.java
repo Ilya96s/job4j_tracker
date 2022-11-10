@@ -1,10 +1,8 @@
 package ru.job4j.tracker;
 
-import org.junit.Test;
-
+import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.*;
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -168,7 +166,7 @@ public class StartUITest {
         assertThat(tracker.findAll().get(0)).isEqualTo(item1);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void whenFindItemByIdSuccessfully() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
@@ -186,7 +184,7 @@ public class StartUITest {
         assertThat(tracker.findAll()).isEqualTo(List.of(item1, item2));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void whenFindItemByIdFail() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
@@ -207,7 +205,7 @@ public class StartUITest {
         assertThat(tracker.findAll()).isEqualTo(List.of(item1, item2));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void whenDeleteItemSuccessfully() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
@@ -224,7 +222,7 @@ public class StartUITest {
         assertThat(tracker.findAll()).isEqualTo(List.of(item2));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void whenDeleteItemFail() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
@@ -240,7 +238,7 @@ public class StartUITest {
         assertThat(tracker.findAll()).isEqualTo(List.of(item1, item2));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void whenExecuteSuccessfully() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
@@ -256,7 +254,7 @@ public class StartUITest {
         assertThat(tracker.findAll().get(0).getName()).isEqualTo(replacedName);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void whenExecuteFail() {
         Output out = new StubOutput();
         MemTracker tracker = new MemTracker();
