@@ -11,4 +11,6 @@
     <include file="scripts/update_001.sql" relativeToChangelogFile="true"/>
     <include file="scripts/update_002.sql" relativeToChangelogFile="true"/>
     <include file="scripts/update_003.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/004_ddl_create_roles_table.sql" relativeToChangelogFile="true"/>
+    <include file="scripts/005_ddl_create_users_table.sql" relativeToChangelogFile="true"/>
 </databaseChangeLog>
