@@ -1,8 +1,7 @@
 package ru.job4j.tracker;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
