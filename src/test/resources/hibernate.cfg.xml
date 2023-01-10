@@ -13,6 +13,7 @@
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
         <property name="hibernate.connection.autocommit">false</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
 
         <mapping class="ru.job4j.tracker.Item" />
         <mapping class="ru.job4j.toone.Role" />

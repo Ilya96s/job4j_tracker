@@ -14,19 +14,6 @@ import static org.assertj.core.api.Assertions.*;
 
 class HbmTrackerTest {
 
-    @BeforeEach
-    public void clearDataBase() {
-        StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
-        SessionFactory sf = new MetadataSources(registry).buildMetadata().buildSessionFactory();
-        try (Session session = sf.openSession()) {
-            session.beginTransaction();
-            for (Item item : session.createQuery("From Item", Item.class).list()) {
-                session.delete(item);
-            }
-            session.getTransaction().commit();
-        }
-    }
-
     @Test
     void whenAddNewItemThenTrackerHasSameItem() throws Exception {
         try (var tracker = new HbmTracker()) {
